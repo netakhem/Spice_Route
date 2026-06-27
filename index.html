@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spice Route Restaurant</title>
+  <meta name="description" content="Experience the royal culinary traditions of Cambodia and Myanmar at Spice Route.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  </head>
+  
+  <body>
+
+  <!-- Header & Navigation -->
+  <header class="main-header">
+    <div class="container header-container">
+      <a href="#" class="logo">
+        <div class="logo-text">
+          <span class="brand-name">SPICE ROUTE</span>
+          <span class="tagline">Khmer & Burmese Cuisine</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" id="navToggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#welcome">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-bg"
+      style="background-image: linear-gradient(rgba(44, 4, 10, 0.75), rgba(44, 4, 10, 0.9)), url('assets/1.png');">
+    </div>
+
+    <div class="container hero-container">
+        <div class="hero-text">
+          <span class="hero-badge">Welcome From</span>
+          <h1 class="hero-title">SPICE ROUTE <span class="highlight">Restaurant</span></h1>
+          <p class="hero-desc">
+            Step into a world where tradition meets flavor. Ancient recipes from the royal kitchens of Cambodia and Myanmar,
+            brought to life with the finest ingredients and centuries of culinary wisdom.
+          </p>
+          <div class="hero-actions">
+            <a href="#menu" class="btn btn-gold">Explore Menu</a>
+            <a href="#contact" class="btn btn-outline">Book Table</a>
+          </div>
+        </div>
+    </div>
+
+  </section>
+
+  <!-- Welcome Message Section -->
+  <section class="welcome-section" id="welcome">
+    <div class="container">
+
+      <div class="section-header text-center">
+        <span class="sub-heading">Our Heritage</span>
+        <h2 class="section-title">WELCOME MESSAGE</h2>
+        <p class="section-desc">
+          At Spice Route, we honor centuries of culinary tradition. Each dish tells a story of kingdoms past, crafted with respect for authentic flavors and time-honored techniques.
+        </p>
+      </div>
+
+      <div class="welcome-image-wrapper">
+          <img src="assets/welcome.png">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Featured Dishes Section -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+
+      <div class="section-header text-center">
+        <span class="sub-heading">Thay Tepprapey's Recommendations</span>
+        <h2 class="section-title">FEATURED DISHES</h2>
+        <p class="section-desc">
+          At Spice Route, we honor centuries of culinary tradition. Each dish tells a story of kingdoms past, crafted with respect for authentic flavors and time-honored techniques.
+        </p>
+      </div>
+
+      <div class="dishes-grid">
+        <!-- Dish 1 -->
+        <div class="dish-card highlight-card">
+
+          <div class="dish-img-wrapper">
+            <img src="assets/khcurry1.png" alt="Amok Trei" class="dish-img">
+            <span class="dish-origin">Khmer</span>
+          </div>
+
+          <div class="dish-info">
+            <div class="dish-header">
+              <h3 class="dish-title">CHHAY, Chakrayuth</h3>
+              <span class="dish-price">$18.50</span>
+            </div>
+
+            <p class="dish-desc">
+              Gentle steamed fish curry with coconut milk, lemongrass, kaffir lime leaves, and fresh spices, traditionally served in a folded banana leaf cup.
+            </p>
+
+            <div class="dish-meta">
+              <span class="badge">Signature</span>
+              <span class="badge">Mild Spicy</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Dish 2 -->
+        <div class="dish-card">
+
+          <div class="dish-img-wrapper">
+            <img src="assets/G_curry2.png" alt="Mohinga" class="dish-img">
+            <span class="dish-origin">Burmese</span>
+          </div>
+
+          <div class="dish-info">
+
+            <div class="dish-header">
+              <h3 class="dish-title">SAW, Oo Lin</h3>
+              <span class="dish-price">$16.50</span>
+            </div>
+
+            <p class="dish-desc">
+              The iconic national dish of Myanmar: fine rice noodles served in a rich, aromatic catfish broth infused with fresh ginger, banana stem, and lemongrass.
+            </p>
+
+            <div class="dish-meta">
+              <span class="badge">Popular</span>
+              <span class="badge">Aromatic</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Dish 3 -->
+        <div class="dish-card">
+
+          <div class="dish-img-wrapper">
+            <img src="assets/G_curry3.png" alt="Samlor Kako" class="dish-img">
+            <span class="dish-origin">Khmer</span>
+          </div>
+
+          <div class="dish-info">
+
+            <div class="dish-header">
+              <h3 class="dish-title">KHEM, Neta</h3>
+              <span class="dish-price">$17.00</span>
+            </div>
+
+            <p class="dish-desc">
+              A deeply comforting traditional Khmer soup featuring roasted crushed rice, seasonal vegetables, green papaya, lemongrass paste, and succulent catfish.
+            </p>
+
+            <div class="dish-meta">
+              <span class="badge">Traditional</span>
+              <span class="badge">Healthy</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Dish 4 -->
+        <div class="dish-card">
+
+          <div class="dish-img-wrapper">
+            <img src="assets/G_curry4.png" alt="Burmese Chicken Curry" class="dish-img">
+            <span class="dish-origin">Burmese</span>
+          </div>
+
+          <div class="dish-info">
+
+            <div class="dish-header">
+              <h3 class="dish-title">BVETH , Monyleakana</h3>
+              <span class="dish-price">$19.00</span>
+            </div>
+
+            <p class="dish-desc">
+              Slow-simmered tender chicken or beef in a rich, fragrant sauce of caramelized onions, garlic, ginger, turmeric, and local spices.
+            </p>
+
+            <div class="dish-meta">
+              <span class="badge">Spicy</span>
+              <span class="badge">Rich</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Contact Form Column -->
+        <div class="contact-form-wrapper">
+          <h2 class="contact-title">CONTACT US</h2>
+
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message or Reservation Details</label>
+              <textarea id="message" name="message" placeholder="How can we host you? Let us know if you want to book a table." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold btn-block">Send Message</button>
+            <div class="form-status" id="formStatus"></div>
+          </form>
+
+        </div>
+
+        <!-- C Info Column -->
+        <div class="contact-info-wrapper">
+          <div class="contact-info-cards">
+
+            <div class="info-card">
+              <h4>Call Us</h4>
+              <p>+855 23 456 789 / +95 1 234 567</p>
+            </div>
+
+            <div class="info-card">
+              <h4>Email Us</h4>
+              <p>reservations@spiceroute.com</p>
+            </div>
+
+            <div class="info-card">
+              <h4>Opening Hours</h4>
+              <p>Mon - Sun: 11:00 AM - 10:00 PM</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-content text-center">
+      <div class="footer-logo">
+        <span class="brand-name">SPICE ROUTE</span>
+        <span class="tagline">Traditional Khmer & Burmese Cuisine</span>
+      </div>
+
+      <div class="social-links">
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="#" aria-label="TripAdvisor">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"></path></svg>
+        </a>
+      </div>
+
+      <p class="copyright">Copyright &copy; 2026 Spice Route Restaurant - All Rights Reserved.</p>
+
+    </div>
+  </footer>
+
+  <!-- JS Script -->
+  <script src="script.js"></script>
+
+</body>
+</html>

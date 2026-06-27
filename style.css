@@ -1,0 +1,773 @@
+/* 1. Font Definitions */
+@font-face {
+  font-family: 'ahellya';
+  src: url('fonts/ahellya.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ahellya';
+  src: url('fonts/ahellya italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* 2. Color-font-transition Variables */
+:root {
+  --color-bg-dark: #0a0a0b;/**/
+  --color-bg-card: #131315;/**/
+  --color-bg-card-hover: #1b1b1e;/**/
+  --color-gold: #d5b583; /**/
+  --color-gold-light: #f3e5ce; /**/
+  --color-gold-hover: #e5c493;
+  --color-gold-transparent: rgba(213, 181, 131, 0.15);
+  --color-border-gold: rgba(213, 181, 131, 0.18); /**/
+  
+  --color-text-primary: #eae6df;/**/
+  --color-text-secondary: #bdafa2;/**/
+  --color-text-muted: #7a7065;/**/
+  
+  --font-headings: 'ahellya', Georgia, serif;/**/
+  --font-body: 'Onest', system-ui, -apple-system, sans-serif;/**/
+  
+  --transition-speed: 0.4s; /**/
+  --transition-ease: cubic-bezier(0.25, 0.8, 0.25, 1); /**/
+  --border-radius: 8px; /**/
+  --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35); /**/
+}
+
+/* 3. Base & Reset Styles */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* 4. Global heading*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headings);
+  color: var(--color-text-primary);
+  font-weight: normal;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-gold);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-transparent);
+}
+
+/* 5. Utility Layout Components */
+.container {
+  width: 92%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Premium Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.9rem 2.2rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-speed) var(--transition-ease);
+}
+
+.btn-gold {
+  background-color: var(--color-gold);
+  color: var(--color-bg-dark);
+}
+.btn-gold:hover {
+  background-color: var(--color-gold-light);
+}
+
+.btn-outline {
+  background-color:var(--color-bg-dark);
+  color: var(--color-gold);
+  border-color: var(--color-border-gold);
+}
+.btn-outline:hover {
+  background-color: var(--color-gold);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+
+/* 6. Header & Sticky Navigation */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(10, 10, 11, 0.85);
+  border-bottom: 1px solid rgba(213, 181, 131, 0.08);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 0;
+}
+
+/* Logo block */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: var(--font-headings);
+  font-size: 1.6rem;
+  color: var(--color-gold);
+}
+
+.tagline {
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Nav Menu styles */
+.nav-menu ul {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-menu a {
+  color: var(--color-text-secondary);
+  font-weight: 400;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-gold);
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+  width: 100%;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--color-gold);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-toggle .bar {
+  width: 22px;
+  height: 1.5px;
+  background-color: var(--color-text-primary);
+  transition: all var(--transition-speed) ease;
+}
+
+/* 7. Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  color: var(--color-text-primary);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.1);
+  animation: zoomHero 2s ease-out forwards;
+}
+
+@keyframes zoomHero {
+  to { transform: scale(1); }
+}
+
+/* Hero Content Grid Overlay */
+.hero-container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-badge {
+  font-family: var(--font-headings);
+  font-size: 1.2rem;
+  color: var(--color-gold);
+  display: inline-block;
+  font-style: italic;
+}
+
+.hero-title {
+  font-family: var(--font-headings);
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 1.8rem;
+  font-weight: normal;
+}
+
+.hero-title .highlight {
+  color: var(--color-gold);
+  display: block;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 3rem;
+  line-height: 1.8;
+  max-width: 500px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* 8. Sections Core Layout */
+section {
+  padding: 4rem 0;
+}
+
+.section-header {
+  max-width: 650px;
+  margin: 0 auto 2rem;
+}
+
+.sub-heading {
+  font-family: var(--font-headings);
+  font-style: italic;
+  color: var(--color-gold);
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  display: inline-block;
+}
+
+.section-title {
+  font-family: var(--font-headings);
+  font-size: 2.8rem;
+  color: var(--color-text-primary);
+}
+
+.section-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  margin-top: 1rem;
+}
+
+/* welcome image Wrapper*/
+.welcome-image-wrapper {
+  background-color: var(--color-gold-light);
+  border: 1px solid var(--color-border-gold);
+  margin: 0 auto 4rem;
+  max-width: 700px;
+  width: min(100%, 700px);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-image-wrapper img {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* 10. Featured Dishes Section */
+.menu-section {
+  background-color:rgba(44, 4, 10, 0.75);
+  border-top: 1px solid rgba(213, 181, 131, 0.05);
+  border-bottom: 1px solid rgba(213, 181, 131, 0.05);
+}
+
+.dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.dish-card {
+  background-color: var(--color-bg-card);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  border: 1px solid var(--color-border-gold);
+  transition: all var(--transition-speed) var(--transition-ease);
+}
+
+.dish-card:hover {
+  background-color: var(--color-bg-card-hover);
+  border-color: var(--color-gold);
+}
+
+.dish-img-wrapper {
+  position: relative;
+  width: 40%;
+  min-height: 260px;
+  max-width: 500px;
+  width: min(100%, 700px);
+  overflow: hidden;
+}
+
+.dish-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dish-origin {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color:rgba(44, 4, 10, 0.75);
+  color: var(--color-gold-light);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 2px;
+  border: 1px solid var(--color-gold);
+  z-index: 2;
+}
+
+.dish-info {
+  width: 60%;
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dish-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 1rem;
+}
+
+.dish-title {
+  font-size: 1.35rem;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+.dish-price {
+  font-family: var(--font-headings);
+  font-size: 1.25rem;
+  color: var(--color-gold);
+}
+
+.dish-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+}
+
+.dish-meta {
+  display: flex;
+  gap: 8px;
+}
+
+.dish-meta .badge {
+  background-color: rgba(255, 255, 255, 0.03);
+  color: var(--color-text-secondary);
+  padding: 0.25rem 0.65rem;
+  font-size: 0.7rem;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Highlighted dish card (spans two columns) */
+.dish-card.highlight-card {
+  grid-column: span 2;
+}
+
+.dish-card.highlight-card .dish-img-wrapper {
+  width: 50%;
+}
+
+.dish-card.highlight-card .dish-info {
+  width: 50%;
+  padding: 3.2rem;
+}
+
+.dish-card.highlight-card .dish-title {
+  font-size: 1.8rem;
+}
+
+/* 11. Contact Us Section */
+.contact-section {
+  background-color:rgba(29, 2, 6, 0.75);
+  position: relative;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-title {
+  font-size: 2.8rem;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-gold);
+  border-radius: var(--border-radius);
+  padding: 1.1rem;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  transition: all var(--transition-speed) var(--transition-ease);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  background-color: var(--color-bg-card-hover);
+  border-color: var(--color-gold);
+  box-shadow: 0 0 15px rgba(213, 181, 131, 0.12);
+}
+
+
+/* Concept route map section */
+
+.contact-info-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  padding: 1.4rem;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-gold);
+  border-radius: var(--border-radius);
+  transition: all var(--transition-speed) ease;
+}
+
+.info-card:hover {
+  background-color: var(--color-bg-card-hover);
+  border-color: var(--color-gold);
+}
+
+
+.info-card h4 {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 3px;
+  letter-spacing: 0.1em;
+}
+
+.info-card p {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+/* 12. Footer Section */
+.main-footer {
+  background-color: #060607;
+  color: var(--color-text-primary);
+  padding: 2rem 0 2rem;
+  border-top: 1px solid rgba(213, 181, 131, 0.06);
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 1.2rem;
+}
+
+.footer-logo .brand-name {
+  font-size: 1.9rem;
+  color: var(--color-gold);
+}
+
+.footer-logo .tagline {
+  color: var(--color-text-muted);
+  font-size: 0.65rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.8rem;
+  margin-bottom: 3rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-gold);
+  color: var(--color-text-secondary);
+}
+
+.social-links a:hover {
+  background-color: var(--color-gold);
+  color: var(--color-bg-dark);
+  border-color: var(--color-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(213, 181, 131, 0.2);
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  padding-top: 2rem;
+}
+
+/* 13. Responsive Breakpoints & Mobile Adaptability */
+
+/* Tablets & Small Desktops */
+@media (max-width: 992px) {
+  section {
+    padding: 6rem 0;
+  }
+  
+  .dishes-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .dish-card.highlight-card {
+    grid-column: span 1;
+  }
+  
+  .dish-card.highlight-card .dish-img-wrapper,
+  .dish-card.highlight-card .dish-info {
+    width: 40%;
+  }
+  
+  .dish-card.highlight-card .dish-info {
+    width: 60%;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
+/* Mobile Viewports */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+    z-index: 1001;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--color-bg-card);
+    padding: 6rem 2rem 2rem;
+    transition: right 0.4s var(--transition-ease);
+    border-left: 1px solid var(--color-border-gold);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .nav-menu.open {
+    right: 0;
+  }
+  
+  .nav-menu ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.2rem;
+  }
+  
+  .nav-menu a {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+  }
+  
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  
+  .hero-desc {
+    font-size: 0.95rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+  }
+  
+  .welcome-image-wrapper img {
+    height: 250px;
+  }
+  
+  .dish-card {
+    flex-direction: column;
+  }
+  
+  .dish-img-wrapper {
+    width: 100% !important;
+    height: 220px;
+  }
+  
+  .dish-info {
+    width: 100% !important;
+    padding: 1.8rem !important;
+  }
+  
+  .dish-title {
+    font-size: 1.25rem;
+  }
+  
+  /* Animate menu burger toggle */
+  .nav-toggle.open .bar:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  
+  .nav-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav-toggle.open .bar:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+}
